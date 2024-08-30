@@ -3,6 +3,11 @@ from textblob import TextBlob
 
 app = Flask(__name__)
 
+
+@app.route('/')
+def home():
+    return "Welcome to the Sentiment Analysis App!"
+
 @app.route('/analyze', methods=['POST'])
 def analyze():
     data = request.json
